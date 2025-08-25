@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amadin Ikpomnwosa | Backend Developer</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+    body {background:#0d1117; color:#c9d1d9; line-height:1.6;}
+    header {display:flex; justify-content:space-between; align-items:center; padding:20px; background:#161b22; position:fixed; width:100%; top:0; z-index:100;}
+    header h1 {font-size:1.5rem; color:#58a6ff;}
+    nav {display:flex;}
+    nav a {color:#c9d1d9; margin:0 15px; text-decoration:none; transition:color 0.3s;}
+    nav a:hover {color:#58a6ff;}
+    .menu-toggle {display:none; font-size:1.8rem; cursor:pointer; color:#58a6ff;}
+    section {padding:100px 20px; max-width:1000px; margin:auto; opacity:0; transform:translateY(20px); transition:opacity 1s ease, transform 1s ease;}
+    section.visible {opacity:1; transform:translateY(0);}
+    .hero {text-align:center; padding-top:60px;}
+    .hero h2 {font-size:2.5rem; color:#58a6ff;}
+    .hero p {margin:15px 0; font-size:1.2rem;}
+    .btn {display:inline-block; margin-top:15px; padding:10px 20px; background:#58a6ff; color:#fff; border-radius:5px; text-decoration:none;}
+    .btn:hover {background:#1f6feb;}
+    .skills, .projects {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+    .card {background:#161b22; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.5); transition:transform 0.3s;}
+    .card:hover {transform:translateY(-5px);}
+    .contact {text-align:center;}
+    footer {text-align:center; padding:20px; background:#161b22; color:#8b949e;}
+    @media(max-width:768px){
+      nav {display:none; flex-direction:column; position:absolute; top:60px; right:20px; background:#161b22; padding:10px; border-radius:8px;}
+      nav a {margin:10px 0;}
+      .menu-toggle {display:block;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Amadin Ikpomnwosa</h1>
+    <span class="menu-toggle">&#9776;</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hi, I'm Amadin Ikpomnwosa</h2>
+    <p>Backend Developer – Building secure, scalable, and efficient server-side systems.</p>
+    <a class="btn" href="#projects">View My Work</a>
+    <!-- Resume Download Button -->
+    <a class="btn" href="resume.pdf" download>Download Resume</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a backend developer with a passion for creating scalable APIs, optimizing server performance, and integrating secure backend solutions. I specialize in Python, HTML, and full web development.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">Python</div>
+      <div class="card">HTML & CSS</div>
+      <div class="card">Web Development</div>
+      <div class="card">REST APIs</div>
+      <div class="card">Database Management</div>
+      <div class="card">Flask/Django (Backend)</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card"><h3>Temperature Converter</h3><p>Convert between Celsius, Fahrenheit, and Kelvin.</p></div>
+      <div class="card"><h3>Scientific Calculator with Notes</h3><p>Advanced calculator that lets you save notes.</p></div>
+      <div class="card"><h3>Multi-Account Creator</h3><p>Automation tool to create multiple accounts.</p></div>
+      <div class="card"><h3>Cracker Game</h3><p>Fun and interactive cracking-themed game.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:ikpomnwosabes713@gmail.com">ikpomnwosabes713@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/AMADIN01" target="_blank">github.com/AMADIN01</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Amadin Ikpomnwosa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const reveal = () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          sec.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    menuToggle.addEventListener('click', () => {
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
